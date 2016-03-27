@@ -77,13 +77,13 @@
     <link href="http://jinsihou19.github.io/2016/03/28/%E6%90%AD%E5%BB%BA%E7%A4%BA%E8%8C%83%E5%B7%A5%E7%A8%8B/"/>
     <id>http://jinsihou19.github.io/2016/03/28/搭建示范工程/</id>
     <published>2016-03-27T16:33:00.000Z</published>
-    <updated>2016-03-27T17:06:44.000Z</updated>
+    <updated>2016-03-27T17:40:37.000Z</updated>
     
     <content type="html">&lt;p&gt;#demoProject&lt;br&gt;用于示范搭建工程&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;搭建工程&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;建立项目文件夹如下的目录结构(都是空文件夹)&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;../../../imge/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;/imge/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;安装bower包管理器,推荐阅读下面的安装教程:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -105,7 +105,7 @@
 &lt;/ol&gt;
 &lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bower init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;这里有个参考&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;../../../imge/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/imge/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;然后按照提示选择选项,就可以了,完成这步,就完成项目的创建了,使用WebStorm打开就可以进行开发.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;clone工程的运行&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -125,7 +125,8 @@
 &lt;p&gt;&lt;strong&gt;搭建工程&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;建立项目文件夹如下的目录结构(都是空文件夹)&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;../../../imge/1.png&quot; alt=&quot;
+&lt;p&gt; &lt;img src=&quot;/imge/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;
     
     </summary>
     
