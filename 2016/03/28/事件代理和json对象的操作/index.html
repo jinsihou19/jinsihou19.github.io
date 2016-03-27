@@ -6,7 +6,7 @@
     <title>事件代理和json对象的操作 | 金丝猴的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="-事件代理 -json -javascript" />
+        <meta name="keywords" content="事件代理,json,javascript" />
     
     <meta name="description" content="#任务十六 事件代理和json对象的操作
 json对象的操作aqiData = {
@@ -38,7 +38,7 @@ json对象的操作aqiData = {
 遍历
 
 123456789101112131415161718192021222324252627282930313233343536373839">
-<meta property="og:updated_time" content="2016-03-27T17:14:59.000Z">
+<meta property="og:updated_time" content="2016-03-27T17:19:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件代理和json对象的操作">
 <meta name="twitter:description" content="#任务十六 事件代理和json对象的操作
@@ -160,7 +160,7 @@ json对象的操作aqiData = {
     <time datetime="2016-03-27T16:33:38.000Z" itemprop="datePublished">2016-03-28</time>
 </a>
             
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件代理-json-javascript/">-事件代理 -json -javascript</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件代理/">事件代理</a></li></ul>
 
         </div>
         <div class="article-entry" itemprop="articleBody">
@@ -176,7 +176,7 @@ json对象的操作aqiData = {
 </code></pre><ol>
 <li>遍历</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">	for (let data in aqiData) &#123;</span><br><span class="line">		console.info(consldata:aqiData[data]);</span><br><span class="line">	&#125;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">3. 删除</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	``delete aqiData[data];``</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 事件代理机制</span><br><span class="line"></span><br><span class="line">*事件代理机制*</span><br><span class="line">&gt;当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</span><br><span class="line"></span><br><span class="line">*浏览器的事件冒泡机制*</span><br><span class="line">&gt;DOM2.0模型将事件处理流程分为三个阶段：一、事件捕获阶段，二、事件目标阶段，三、事件起泡阶段。如图：</span><br><span class="line"></span><br><span class="line">![](http://images.cnitblog.com/blog/477973/201302/18141423-8bd09a9c1e184df9a13b6e26b88348f3.jpg)</span><br><span class="line"></span><br><span class="line">&gt;事件捕获：当某个元素触发某个事件（如onclick），顶层对象document就会发出一个事件流，随着DOM树的节点向目标元素节点流去，直到到达事件真正发生的目标元素。在这个过程中，事件相应的监听函数是不会被触发的。</span><br><span class="line"></span><br><span class="line">&gt;事件目标：当到达目标元素之后，执行目标元素该事件相应的处理函数。如果没有绑定监听函数，那就不执行。</span><br><span class="line"></span><br><span class="line">&gt;事件起泡：从目标元素开始，往顶层元素传播。途中如果有节点绑定了相应的事件处理函数，这些函数都会被一次触发。如果想阻止事件起泡，可以使用e.stopPropagation()（Firefox）或者e.cancelBubble=true（IE）来组织事件的冒泡传播。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">*实例*</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;table id=&quot;aqi-table&quot; border=&quot;1px&quot;&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		  &lt;td&gt;城市&lt;/td&gt;&lt;td&gt;空气质量&lt;/td&gt;&lt;td&gt;操作&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		  &lt;td&gt;北京&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;&lt;button&gt;删除&lt;/button&gt;&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		  &lt;td&gt;北京&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;&lt;button&gt;删除&lt;/button&gt;&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">	for (let data in aqiData) &#123;</span><br><span class="line">		console.info(consldata:aqiData[data]);</span><br><span class="line">	&#125;</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line">3. 删除</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	``delete aqiData[data];``</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 事件代理机制</span><br><span class="line"></span><br><span class="line">*事件代理机制*</span><br><span class="line">&gt;当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</span><br><span class="line"></span><br><span class="line">*浏览器的事件冒泡机制*</span><br><span class="line">&gt;DOM2.0模型将事件处理流程分为三个阶段：一、事件捕获阶段，二、事件目标阶段，三、事件起泡阶段。如图：</span><br><span class="line"></span><br><span class="line">&gt;事件捕获：当某个元素触发某个事件（如onclick），顶层对象document就会发出一个事件流，随着DOM树的节点向目标元素节点流去，直到到达事件真正发生的目标元素。在这个过程中，事件相应的监听函数是不会被触发的。</span><br><span class="line"></span><br><span class="line">&gt;事件目标：当到达目标元素之后，执行目标元素该事件相应的处理函数。如果没有绑定监听函数，那就不执行。</span><br><span class="line"></span><br><span class="line">&gt;事件起泡：从目标元素开始，往顶层元素传播。途中如果有节点绑定了相应的事件处理函数，这些函数都会被一次触发。如果想阻止事件起泡，可以使用e.stopPropagation()（Firefox）或者e.cancelBubble=true（IE）来组织事件的冒泡传播。</span><br><span class="line"></span><br><span class="line">![](http://images.cnitblog.com/blog/477973/201302/18141423-8bd09a9c1e184df9a13b6e26b88348f3.jpg)</span><br><span class="line"></span><br><span class="line">*实例*</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;table id=&quot;aqi-table&quot; border=&quot;1px&quot;&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		  &lt;td&gt;城市&lt;/td&gt;&lt;td&gt;空气质量&lt;/td&gt;&lt;td&gt;操作&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		  &lt;td&gt;北京&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;&lt;button&gt;删除&lt;/button&gt;&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		  &lt;td&gt;北京&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt;&lt;button&gt;删除&lt;/button&gt;&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
 <p>当事件被抛到更上层的父节点的时候，我们通过检查事件的目标对象（target）来判断并获取事件源对象。我这里没有判断是否是这个对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//由上层（泛指）来捕获这个事件，然后回溯到事件触发者来进行处理</span></span><br><span class="line">table.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.target) &#123;<span class="comment">//这里的taget就是button</span></span><br><span class="line">	    <span class="keyword">let</span> context = e.target.parentNode.parentNode.firstChild.innerText;</span><br><span class="line">	    <span class="keyword">delete</span> aqiData[context];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -186,7 +186,7 @@ json对象的操作aqiData = {
 
 
 
-    <a data-url="http://jinsihou19.github.io/2016/03/28/事件代理和json对象的操作/" data-id="cimatvy6r0002iffy9ibaexgl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://jinsihou19.github.io/2016/03/28/事件代理和json对象的操作/" data-id="cimatzu9k0004q9fyqxlexxqp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -450,7 +450,7 @@ json对象的操作aqiData = {
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件代理-json-javascript/">-事件代理 -json -javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建工程/">搭建工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件代理/">事件代理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建工程/">搭建工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -460,7 +460,7 @@ json对象的操作aqiData = {
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/事件代理-json-javascript/" style="font-size: 10px;">-事件代理 -json -javascript</a> <a href="/tags/搭建工程/" style="font-size: 10px;">搭建工程</a>
+            <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/事件代理/" style="font-size: 10px;">事件代理</a> <a href="/tags/搭建工程/" style="font-size: 10px;">搭建工程</a>
         </div>
     </div>
 
