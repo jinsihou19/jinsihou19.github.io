@@ -3,24 +3,57 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hello World | 金丝猴的博客</title>
+    <title>事件代理和json对象的操作 | 金丝猴的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="事件代理 json" />
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="#任务十六 事件代理和json对象的操作
+json对象的操作aqiData = {
+     &amp;quot;北京&amp;quot;: 90,
+     &amp;quot;上海&amp;quot;: 40
+}; 
+
+添加
+aqiData[city] = value;
+
+遍历
+for (let data in aqiData) {
+    console.info(consldata:aqiData[data]);
+}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://jinsihou19.github.io/2016/03/27/hello-world/index.html">
+<meta property="og:title" content="事件代理和json对象的操作">
+<meta property="og:url" content="http://jinsihou19.github.io/2016/03/28/事件代理和json对象的操作/index.html">
 <meta property="og:site_name" content="金丝猴的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-03-27T09:41:36.000Z">
+<meta property="og:description" content="#任务十六 事件代理和json对象的操作
+json对象的操作aqiData = {
+     &amp;quot;北京&amp;quot;: 90,
+     &amp;quot;上海&amp;quot;: 40
+}; 
+
+添加
+aqiData[city] = value;
+
+遍历
+for (let data in aqiData) {
+    console.info(consldata:aqiData[data]);
+}">
+<meta property="og:updated_time" content="2016-03-27T16:37:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="事件代理和json对象的操作">
+<meta name="twitter:description" content="#任务十六 事件代理和json对象的操作
+json对象的操作aqiData = {
+     &amp;quot;北京&amp;quot;: 90,
+     &amp;quot;上海&amp;quot;: 40
+}; 
+
+添加
+aqiData[city] = value;
+
+遍历
+for (let data in aqiData) {
+    console.info(consldata:aqiData[data]);
+}">
     
 
     
@@ -109,35 +142,61 @@ Quick">
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-hello-world" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-事件代理和json对象的操作" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Hello World
+        事件代理和json对象的操作
         </h1>
     
 
             </header>
         
         <div class="article-subtitle">
-            <a href="/2016/03/27/hello-world/" class="article-date">
-    <time datetime="2016-03-27T08:11:02.000Z" itemprop="datePublished">2016-03-27</time>
+            <a href="/2016/03/28/事件代理和json对象的操作/" class="article-date">
+    <time datetime="2016-03-27T16:33:38.000Z" itemprop="datePublished">2016-03-28</time>
 </a>
             
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件代理-json/">事件代理 json</a></li></ul>
+
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>#任务十六 事件代理和json对象的操作</p>
+<h3 id="json对象的操作"><a href="#json对象的操作" class="headerlink" title="json对象的操作"></a>json对象的操作</h3><pre><code>aqiData = {
+     &quot;北京&quot;: 90,
+     &quot;上海&quot;: 40
+}; 
+</code></pre><ol>
+<li><p>添加</p>
+<pre><code>aqiData[city] = value;
+</code></pre></li>
+<li><p>遍历</p>
+<pre><code>for (let data in aqiData) {
+    console.info(consldata:aqiData[data]);
+}
+</code></pre></li>
+<li><p>删除</p>
+<pre><code>delete aqiData[data];
+</code></pre></li>
+</ol>
+<h3 id="事件代理机制"><a href="#事件代理机制" class="headerlink" title="事件代理机制"></a>事件代理机制</h3><p><em>事件代理机制</em></p>
+<blockquote>
+<p>当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</p>
+</blockquote>
+<p><em>浏览器的事件冒泡机制</em></p>
+<blockquote>
+<p>DOM2.0模型将事件处理流程分为三个阶段：一、事件捕获阶段，二、事件目标阶段，三、事件起泡阶段。如图：</p>
+<p>事件捕获：当某个元素触发某个事件（如onclick），顶层对象document就会发出一个事件流，随着DOM树的节点向目标元素节点流去，直到到达事件真正发生的目标元素。在这个过程中，事件相应的监听函数是不会被触发的。</p>
+<p>事件目标：当到达目标元素之后，执行目标元素该事件相应的处理函数。如果没有绑定监听函数，那就不执行。</p>
+<p>事件起泡：从目标元素开始，往顶层元素传播。途中如果有节点绑定了相应的事件处理函数，这些函数都会被一次触发。如果想阻止事件起泡，可以使用e.stopPropagation()（Firefox）或者e.cancelBubble=true（IE）来组织事件的冒泡传播。</p>
+</blockquote>
+<p><em>实例</em></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"aqi-table"</span> <span class="attr">border</span>=<span class="string">"1px"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">td</span>&gt;</span>城市<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>空气质量<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>操作<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">td</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>90<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		  <span class="tag">&lt;<span class="name">td</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>90<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当事件被抛到更上层的父节点的时候，我们通过检查事件的目标对象（target）来判断并获取事件源对象。我这里没有判断是否是这个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//由上层（泛指）来捕获这个事件，然后回溯到事件触发者来进行处理</span></span><br><span class="line">table.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.target) &#123;<span class="comment">//这里的taget就是button</span></span><br><span class="line">	    <span class="keyword">let</span> context = e.target.parentNode.parentNode.firstChild.innerText;</span><br><span class="line">	    <span class="keyword">delete</span> aqiData[context];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -145,7 +204,7 @@ Quick">
 
 
 
-    <a data-url="http://jinsihou19.github.io/2016/03/27/hello-world/" data-id="cimasinf2000071fyx1dccf8v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://jinsihou19.github.io/2016/03/28/事件代理和json对象的操作/" data-id="cimasinff000271fyaupsm3cn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -212,7 +271,7 @@ Quick">
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/03/27/hello-world/" data-title="Hello World" data-url="http://jinsihou19.github.io/2016/03/27/hello-world/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/28/事件代理和json对象的操作/" data-title="事件代理和json对象的操作" data-url="http://jinsihou19.github.io/2016/03/28/事件代理和json对象的操作/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -292,16 +351,12 @@ Quick">
         
 <nav id="article-nav">
     
-        <a href="/2016/03/27/page/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            page
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2016/03/27/page/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">page</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
