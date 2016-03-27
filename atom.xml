@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinsihou19.github.io/"/>
-  <updated>2016-03-27T16:47:00.000Z</updated>
+  <updated>2016-03-27T17:04:42.000Z</updated>
   <id>http://jinsihou19.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://jinsihou19.github.io/2016/03/28/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86%E5%92%8Cjson%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
     <id>http://jinsihou19.github.io/2016/03/28/事件代理和json对象的操作/</id>
     <published>2016-03-27T16:33:38.000Z</published>
-    <updated>2016-03-27T16:47:00.000Z</updated>
+    <updated>2016-03-27T17:04:42.000Z</updated>
     
     <content type="html">&lt;p&gt;#任务十六 事件代理和json对象的操作&lt;/p&gt;
-&lt;h3 id=&quot;json对象的操作&quot;&gt;&lt;a href=&quot;#json对象的操作&quot; class=&quot;headerlink&quot; title=&quot;json对象的操作&quot;&gt;&lt;/a&gt;json对象的操作&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;	aqiData = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	     &quot;北京&quot;: 90,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	     &quot;上海&quot;: 40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;``` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1. 添加&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	aqiData[city] = value;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;json对象的操作&quot;&gt;&lt;a href=&quot;#json对象的操作&quot; class=&quot;headerlink&quot; title=&quot;json对象的操作&quot;&gt;&lt;/a&gt;json对象的操作&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;	aqiData = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	     &quot;北京&quot;: 90,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	     &quot;上海&quot;: 40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;``` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1. 添加&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;```javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	aqiData[city] = value;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ol&gt;
 &lt;li&gt;遍历&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; data &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; aqiData) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.info(consldata:aqiData[data]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;`	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. 删除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; aqiData[data];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; data &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; aqiData) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.info(consldata:aqiData[data]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;`	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. 删除&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;``&lt;/span&gt;javascript&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt; aqiData[data];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;事件代理机制&quot;&gt;&lt;a href=&quot;#事件代理机制&quot; class=&quot;headerlink&quot; title=&quot;事件代理机制&quot;&gt;&lt;/a&gt;事件代理机制&lt;/h3&gt;&lt;p&gt;&lt;em&gt;事件代理机制&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。&lt;/p&gt;
@@ -63,12 +63,13 @@
     <link href="http://jinsihou19.github.io/2016/03/28/%E6%90%AD%E5%BB%BA%E7%A4%BA%E8%8C%83%E5%B7%A5%E7%A8%8B/"/>
     <id>http://jinsihou19.github.io/2016/03/28/搭建示范工程/</id>
     <published>2016-03-27T16:33:00.000Z</published>
-    <updated>2016-03-27T16:56:19.000Z</updated>
+    <updated>2016-03-27T17:06:44.000Z</updated>
     
     <content type="html">&lt;p&gt;#demoProject&lt;br&gt;用于示范搭建工程&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;搭建工程&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;建立项目文件夹如下的目录结构(都是空文件夹)&lt;br&gt; &lt;img src=&quot;/imge/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;建立项目文件夹如下的目录结构(都是空文件夹)&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;../../../imge/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;安装bower包管理器,推荐阅读下面的安装教程:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -90,7 +91,7 @@
 &lt;/ol&gt;
 &lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;bower init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;这里有个参考&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/imge/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../imge/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;然后按照提示选择选项,就可以了,完成这步,就完成项目的创建了,使用WebStorm打开就可以进行开发.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;clone工程的运行&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -109,8 +110,8 @@
       &lt;p&gt;#demoProject&lt;br&gt;用于示范搭建工程&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;搭建工程&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;建立项目文件夹如下的目录结构(都是空文件夹)&lt;br&gt; &lt;img src=&quot;/imge/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;建立项目文件夹如下的目录结构(都是空文件夹)&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;../../../imge/1.png&quot; alt=&quot;
     
     </summary>
     
