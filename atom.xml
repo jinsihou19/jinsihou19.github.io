@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinsihou19.github.io/"/>
-  <updated>2016-05-20T13:09:48.000Z</updated>
+  <updated>2016-05-20T13:12:38.000Z</updated>
   <id>http://jinsihou19.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://jinsihou19.github.io/2016/05/20/electron1/"/>
     <id>http://jinsihou19.github.io/2016/05/20/electron1/</id>
     <published>2016-05-20T10:05:45.000Z</published>
-    <updated>2016-05-20T13:09:48.000Z</updated>
+    <updated>2016-05-20T13:12:38.000Z</updated>
     
-    <content type="html">&lt;p&gt;运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。&lt;br&gt;在项目的目录下，打开终端运行命令安装electron打包工具。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install electron-packager --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在项目的目录下，打开终端运行命令安装electron打包工具。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install electron-packager --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;打包应用&quot;&gt;&lt;a href=&quot;#打包应用&quot; class=&quot;headerlink&quot; title=&quot;打包应用&quot;&gt;&lt;/a&gt;打包应用&lt;/h2&gt;&lt;p&gt;安装完毕之后，在&lt;code&gt;packsge.json&lt;/code&gt;中添加构建脚本。&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&quot;scripts&quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;start&quot;: &quot;electron .&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;build&quot;: &quot;electron-packager . MyApp --platform=darwin --arch=x64 --ignore=node_modules/electron-*&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;electron-packager的格式：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;electron-packager 项目目录 app名称 --platform=平台 --arch=架构 --ignore=要忽略的目录或文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 详细的参数和使用方法可以是使用命令 --help的形式查看帮助&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;保存之后，在终端运行&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm run build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -37,7 +37,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。&lt;br&gt;在项目的目录下，打开终端运行命令安装electron打包工具。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      &lt;p&gt;运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。&lt;br&gt;
     
     </summary>
     
@@ -53,11 +53,11 @@
   </entry>
   
   <entry>
-    <title>初探Electron</title>
+    <title>新建Electron应用</title>
     <link href="http://jinsihou19.github.io/2016/05/20/Try-Electron/"/>
     <id>http://jinsihou19.github.io/2016/05/20/Try-Electron/</id>
     <published>2016-05-19T17:24:51.000Z</published>
-    <updated>2016-05-20T10:07:59.000Z</updated>
+    <updated>2016-05-20T13:15:00.000Z</updated>
     
     <content type="html">&lt;p&gt;Electron 框架的前身是 Atom Shell，可以让你写使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序。它是基于io.js 和 Chromium 开源项目，并用于在 Atom 编辑器中。Electron 是开源的，由 GitHub 维护，有一个活跃的社区。最重要的是，Electron 应用服务构建和运行在 Mac，Windows 和 Linux。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;建立npm工程&quot;&gt;&lt;a href=&quot;#建立npm工程&quot; class=&quot;headerlink&quot; title=&quot;建立npm工程&quot;&gt;&lt;/a&gt;建立npm工程&lt;/h2&gt;&lt;p&gt;新建工程文件夹，使用npm初始化一个npm项目&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;

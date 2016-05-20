@@ -8,20 +8,17 @@
     
         <meta name="keywords" content="Nodejs,原生应用,Electron" />
     
-    <meta name="description" content="运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。在项目的目录下，打开终端运行命令安装electron打包工具。1npm install electron-packager --save-dev
-打包应用安装完毕之后，在packsge.json中添加构建脚本。1234&quot;scripts&quot;: &amp;#123;    &quot;start&quot;: &quot;electron .&quot;,    &quot;build">
+    <meta name="description" content="运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="打包electron应用">
 <meta property="og:url" content="http://jinsihou19.github.io/2016/05/20/electron1/index.html">
 <meta property="og:site_name" content="金丝猴的博客">
-<meta property="og:description" content="运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。在项目的目录下，打开终端运行命令安装electron打包工具。1npm install electron-packager --save-dev
-打包应用安装完毕之后，在packsge.json中添加构建脚本。1234&quot;scripts&quot;: &amp;#123;    &quot;start&quot;: &quot;electron .&quot;,    &quot;build">
+<meta property="og:description" content="运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。">
 <meta property="og:image" content="http://jinsihou19.github.io/2016/05/20/electron1/.png">
-<meta property="og:updated_time" content="2016-05-20T13:09:48.000Z">
+<meta property="og:updated_time" content="2016-05-20T13:12:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="打包electron应用">
-<meta name="twitter:description" content="运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。在项目的目录下，打开终端运行命令安装electron打包工具。1npm install electron-packager --save-dev
-打包应用安装完毕之后，在packsge.json中添加构建脚本。1234&quot;scripts&quot;: &amp;#123;    &quot;start&quot;: &quot;electron .&quot;,    &quot;build">
+<meta name="twitter:description" content="运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。">
 <meta name="twitter:image" content="http://jinsihou19.github.io/2016/05/20/electron1/.png">
     
 
@@ -133,7 +130,7 @@
 
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。<br>在项目的目录下，打开终端运行命令安装electron打包工具。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron-packager --save-dev</span><br></pre></td></tr></table></figure></p>
+            <p>运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。<br><a id="more"></a><br>在项目的目录下，打开终端运行命令安装electron打包工具。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install electron-packager --save-dev</span><br></pre></td></tr></table></figure></p>
 <h2 id="打包应用"><a href="#打包应用" class="headerlink" title="打包应用"></a>打包应用</h2><p>安装完毕之后，在<code>packsge.json</code>中添加构建脚本。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "start": "electron .",</span><br><span class="line">    "build": "electron-packager . MyApp --platform=darwin --arch=x64 --ignore=node_modules/electron-*"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <p>electron-packager的格式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">electron-packager 项目目录 app名称 --platform=平台 --arch=架构 --ignore=要忽略的目录或文件</span><br><span class="line"><span class="comment"># 详细的参数和使用方法可以是使用命令 --help的形式查看帮助</span></span><br></pre></td></tr></table></figure></p>
 <p>保存之后，在终端运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure></p>
@@ -151,7 +148,7 @@
 
 
 
-    <a data-url="http://jinsihou19.github.io/2016/05/20/electron1/" data-id="ciofkcdbr0001y45grpxs7pki" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://jinsihou19.github.io/2016/05/20/electron1/" data-id="ciofquh5d0001dcfy085zlttz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -301,7 +298,7 @@
     
         <a href="/2016/05/20/Try-Electron/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">初探Electron</p>
+        <p class="article-nav-title">新建Electron应用</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -342,7 +339,7 @@
                             <a href="/2016/05/20/Try-Electron/" class="thumbnail">
     
     
-        <span style="background-image:url(/2016/05/20/Try-Electron/.png)" alt="初探Electron" class="thumbnail-image"></span>
+        <span style="background-image:url(/2016/05/20/Try-Electron/.png)" alt="新建Electron应用" class="thumbnail-image"></span>
     
     
 </a>
@@ -350,7 +347,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Electron/">Electron</a></p>
-                            <p class="item-title"><a href="/2016/05/20/Try-Electron/" class="title">初探Electron</a></p>
+                            <p class="item-title"><a href="/2016/05/20/Try-Electron/" class="title">新建Electron应用</a></p>
                             <p class="item-date"><time datetime="2016-05-19T17:24:51.000Z" itemprop="datePublished">2016-05-20</time></p>
                         </div>
                     </li>
