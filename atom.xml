@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinsihou19.github.io/"/>
-  <updated>2016-05-19T18:04:19.000Z</updated>
+  <updated>2016-05-20T13:09:48.000Z</updated>
   <id>http://jinsihou19.github.io/</id>
   
   <author>
@@ -16,11 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>打包electron应用</title>
+    <link href="http://jinsihou19.github.io/2016/05/20/electron1/"/>
+    <id>http://jinsihou19.github.io/2016/05/20/electron1/</id>
+    <published>2016-05-20T10:05:45.000Z</published>
+    <updated>2016-05-20T13:09:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。&lt;br&gt;在项目的目录下，打开终端运行命令安装electron打包工具。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install electron-packager --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;打包应用&quot;&gt;&lt;a href=&quot;#打包应用&quot; class=&quot;headerlink&quot; title=&quot;打包应用&quot;&gt;&lt;/a&gt;打包应用&lt;/h2&gt;&lt;p&gt;安装完毕之后，在&lt;code&gt;packsge.json&lt;/code&gt;中添加构建脚本。&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&quot;scripts&quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;start&quot;: &quot;electron .&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;build&quot;: &quot;electron-packager . MyApp --platform=darwin --arch=x64 --ignore=node_modules/electron-*&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;electron-packager的格式：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;electron-packager 项目目录 app名称 --platform=平台 --arch=架构 --ignore=要忽略的目录或文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 详细的参数和使用方法可以是使用命令 --help的形式查看帮助&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;保存之后，在终端运行&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm run build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意&lt;/em&gt;：这个运行会下载没有的平台的构建包，网速慢的话需要不少时间。&lt;/p&gt;
+&lt;p&gt;完成之后就会在目录下生成一个appname-platform-arch名字的文件夹，打包好的应用就在文件夹中。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;压缩源码&quot;&gt;&lt;a href=&quot;#压缩源码&quot; class=&quot;headerlink&quot; title=&quot;压缩源码&quot;&gt;&lt;/a&gt;压缩源码&lt;/h2&gt;&lt;p&gt;生成应用的时，有时候不希望直接暴漏源码。使用源码压缩就可以将源码打包成一个asar的包。&lt;br&gt;同样需要添加脚本，现在的脚本是这样的：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&quot;scripts&quot;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;start&quot;: &quot;electron .&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;package&quot;: &quot;asar pack MyApp-darwin-x64/MyApp.app/Contents/Resources/app MyApp-darwin-x64/MyApp.app/Contents/Resources/app.asar&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;build&quot;: &quot;electron-packager . MyApp --platform=darwin --arch=x64 --ignore=node_modules/electron-*&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在终端运行：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install package&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;现在打开app包就可以看见同名的asar的，然后删除原来的源码包就可以了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;运行第一个程序之后，我希望自己写的程序能够给别人运行，这就涉及到应用的打包。&lt;br&gt;在项目的目录下，打开终端运行命令安装electron打包工具。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+    
+    </summary>
+    
+      <category term="Electron" scheme="http://jinsihou19.github.io/categories/Electron/"/>
+    
+    
+      <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
+    
+      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初探Electron</title>
     <link href="http://jinsihou19.github.io/2016/05/20/Try-Electron/"/>
     <id>http://jinsihou19.github.io/2016/05/20/Try-Electron/</id>
     <published>2016-05-19T17:24:51.000Z</published>
-    <updated>2016-05-19T18:04:19.000Z</updated>
+    <updated>2016-05-20T10:07:59.000Z</updated>
     
     <content type="html">&lt;p&gt;Electron 框架的前身是 Atom Shell，可以让你写使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序。它是基于io.js 和 Chromium 开源项目，并用于在 Atom 编辑器中。Electron 是开源的，由 GitHub 维护，有一个活跃的社区。最重要的是，Electron 应用服务构建和运行在 Mac，Windows 和 Linux。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;建立npm工程&quot;&gt;&lt;a href=&quot;#建立npm工程&quot; class=&quot;headerlink&quot; title=&quot;建立npm工程&quot;&gt;&lt;/a&gt;建立npm工程&lt;/h2&gt;&lt;p&gt;新建工程文件夹，使用npm初始化一个npm项目&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -41,7 +78,7 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://jinsihou19.github.io/categories/Nodejs/"/>
+      <category term="Electron" scheme="http://jinsihou19.github.io/categories/Electron/"/>
     
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
@@ -57,7 +94,7 @@
     <link href="http://jinsihou19.github.io/2016/05/19/%E6%96%B0%E5%BB%BAhexo%E6%96%87%E6%A1%A3/"/>
     <id>http://jinsihou19.github.io/2016/05/19/新建hexo文档/</id>
     <published>2016-05-19T15:28:54.000Z</published>
-    <updated>2016-05-19T18:04:16.000Z</updated>
+    <updated>2016-05-20T12:19:07.000Z</updated>
     
     <content type="html">&lt;p&gt;这个Hexo部署有一段时间了，但是时间久了之后，我连怎么写文章部署到github.io都忘记了，所以写下本文，作为整理和记录，以供以后复习。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;安装git&quot;&gt;&lt;a href=&quot;#安装git&quot; class=&quot;headerlink&quot; title=&quot;安装git&quot;&gt;&lt;/a&gt;安装git&lt;/h2&gt;&lt;p&gt;下载并安装git或者是github，了解点Git的基础命令就可以完成本任务。&lt;/p&gt;
@@ -93,7 +130,7 @@
     
     </summary>
     
-      <category term="Nodejs" scheme="http://jinsihou19.github.io/categories/Nodejs/"/>
+      <category term="hexo" scheme="http://jinsihou19.github.io/categories/hexo/"/>
     
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
@@ -224,27 +261,11 @@
   </entry>
   
   <entry>
-    <title>page</title>
-    <link href="http://jinsihou19.github.io/2016/03/27/page/"/>
-    <id>http://jinsihou19.github.io/2016/03/27/page/</id>
-    <published>2016-03-27T10:14:51.000Z</published>
-    <updated>2016-03-27T10:14:51.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Hello World</title>
     <link href="http://jinsihou19.github.io/2016/03/27/hello-world/"/>
     <id>http://jinsihou19.github.io/2016/03/27/hello-world/</id>
     <published>2016-03-27T08:11:02.000Z</published>
-    <updated>2016-03-27T09:41:36.000Z</updated>
+    <updated>2016-05-20T12:19:03.000Z</updated>
     
     <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -262,6 +283,8 @@
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
     
     </summary>
+    
+      <category term="hexo" scheme="http://jinsihou19.github.io/categories/hexo/"/>
     
     
   </entry>
