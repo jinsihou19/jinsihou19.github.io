@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinsihou19.github.io/"/>
-  <updated>2017-12-12T15:09:22.842Z</updated>
+  <updated>2017-12-15T16:00:39.677Z</updated>
   <id>http://jinsihou19.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PhantomJs 踩坑</title>
+    <link href="http://jinsihou19.github.io/2017/12/15/webfront/PhantomJs%E8%B8%A9%E5%9D%91/"/>
+    <id>http://jinsihou19.github.io/2017/12/15/webfront/PhantomJs踩坑/</id>
+    <published>2017-12-15T15:49:30.000Z</published>
+    <updated>2017-12-15T16:00:39.677Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="PhantomJs-踩坑"><a href="#PhantomJs-踩坑" class="headerlink" title="PhantomJs 踩坑"></a>PhantomJs 踩坑</h1><h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><ul><li>phantomjs 环境下不能给 window.localStorage 赋值，会引起 phantomjs 占用内存、CPU 等资源占用飙涨。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;PhantomJs-踩坑&quot;&gt;&lt;a href=&quot;#PhantomJs-踩坑&quot; class=&quot;headerlink&quot; title=&quot;PhantomJs 踩坑&quot;&gt;&lt;/a&gt;PhantomJs 踩坑&lt;/h1&gt;&lt;h5 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;
+      
+    
+    </summary>
+    
+      <category term="web 前端" scheme="http://jinsihou19.github.io/categories/web-%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="PhantomJs" scheme="http://jinsihou19.github.io/tags/PhantomJs/"/>
+    
+      <category term="踩坑" scheme="http://jinsihou19.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+  </entry>
   
   <entry>
     <title>meta标签控制IE渲染模式</title>
@@ -64,9 +91,9 @@
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
     
-      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
-    
       <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
+    
+      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
@@ -90,9 +117,9 @@
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
     
-      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
-    
       <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
+    
+      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   

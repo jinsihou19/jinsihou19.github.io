@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[PhantomJs 踩坑]]></title>
+      <url>/2017/12/15/webfront/PhantomJs%E8%B8%A9%E5%9D%91/</url>
+      <content type="html"><![CDATA[<h1 id="PhantomJs-踩坑"><a href="#PhantomJs-踩坑" class="headerlink" title="PhantomJs 踩坑"></a>PhantomJs 踩坑</h1><h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><ul>
+<li>phantomjs 环境下不能给 window.localStorage 赋值，会引起 phantomjs 占用内存、CPU 等资源占用飙涨。</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> web 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> PhantomJs </tag>
+            
+            <tag> 踩坑 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[meta标签控制IE渲染模式]]></title>
       <url>/2017/12/12/webfront/meta%E6%A0%87%E7%AD%BE%E6%8E%A7%E5%88%B6IE%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F/</url>
       <content type="html"><![CDATA[<p>meta标签控制IE渲染标准模式和兼容模式<br><a id="more"></a></p>
@@ -77,9 +102,9 @@
             
             <tag> Nodejs </tag>
             
-            <tag> 原生应用 </tag>
-            
             <tag> Electron </tag>
+            
+            <tag> 原生应用 </tag>
             
         </tags>
         
@@ -119,9 +144,9 @@
             
             <tag> Nodejs </tag>
             
-            <tag> 原生应用 </tag>
-            
             <tag> Electron </tag>
+            
+            <tag> 原生应用 </tag>
             
         </tags>
         
