@@ -5,7 +5,8 @@
     <entry>
       <title><![CDATA[Meta标签中的SEO优化]]></title>
       <url>/2017/12/17/Meta%E6%A0%87%E7%AD%BE%E4%B8%AD%E7%9A%84SEO%E4%BC%98%E5%8C%96/</url>
-      <content type="html"><![CDATA[<h4 id="Meta-Description"><a href="#Meta-Description" class="headerlink" title="Meta Description"></a>Meta Description</h4><p><code>Meta description</code>标签可能是最有用的标签之一。顾名思义，它会给搜索引擎提供关于这个网页的简短的描述。代码如下:</p>
+      <content type="html"><![CDATA[<p>本文主要介绍<code>Meta</code>标签中和<code>SEO</code>优化有关的标签，<code>description</code>，<code>robots</code>，<code>keywords</code>和<code>title</code>，以及优化建议。<br><a id="more"></a></p>
+<h4 id="Meta-Description"><a href="#Meta-Description" class="headerlink" title="Meta Description"></a>Meta Description</h4><p><code>Meta description</code>标签可能是最有用的标签之一。顾名思义，它会给搜索引擎提供关于这个网页的简短的描述。代码如下:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"页面简介"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p>有这个标签之后，搜索引擎会在搜索结果页链接的下方显示出这个网页的简短的描述。推荐的<code>description</code>长度为160 个字符。</p>
 <p>但是如果你没有使用<code>description</code>标签，搜索引擎仍会在搜索结果页链接的下方显示出自己创键的一小段文字或者干脆为空。没有简介或者不精确的简介，会让搜索结果略显单薄，也就意味着你将可能失去用户点击网页的机会。</p>
