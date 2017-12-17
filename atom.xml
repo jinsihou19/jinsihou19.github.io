@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>金丝猴的博客</title>
+  <title>金丝猴日记</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -112,9 +112,9 @@
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
     
-      <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
-    
       <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
     
   </entry>
   
@@ -138,9 +138,9 @@
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
     
-      <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
-    
       <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
     
   </entry>
   

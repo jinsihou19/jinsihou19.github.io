@@ -144,9 +144,9 @@
             
             <tag> Nodejs </tag>
             
-            <tag> Electron </tag>
-            
             <tag> 原生应用 </tag>
+            
+            <tag> Electron </tag>
             
         </tags>
         
@@ -186,9 +186,9 @@
             
             <tag> Nodejs </tag>
             
-            <tag> Electron </tag>
-            
             <tag> 原生应用 </tag>
+            
+            <tag> Electron </tag>
             
         </tags>
         
@@ -386,19 +386,5 @@
     </entry>
     
   
-  
-    
-    <entry>
-      <title><![CDATA[标签]]></title>
-      <url>/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[分类]]></title>
-      <url>/categories/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
   
 </search>
