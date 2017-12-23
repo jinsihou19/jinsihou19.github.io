@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jinsihou19.github.io/"/>
-  <updated>2017-12-17T11:00:19.151Z</updated>
+  <updated>2017-12-23T10:33:42.956Z</updated>
   <id>http://jinsihou19.github.io/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTML条件注释</title>
+    <link href="http://jinsihou19.github.io/2017/12/23/webfront/HTML%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/"/>
+    <id>http://jinsihou19.github.io/2017/12/23/webfront/HTML条件注释/</id>
+    <published>2017-12-23T10:11:00.000Z</published>
+    <updated>2017-12-23T10:33:42.956Z</updated>
+    
+    <content type="html"><![CDATA[<p>简单介绍下 HTML 条件注释<br><a id="more"></a></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if !IE]&gt;&lt;!--&gt;</span> 除IE外都可识别 <span class="comment">&lt;!--&lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE]&gt; 所有的IE可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 6]&gt; 仅IE6可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 6]&gt; IE6以及IE6以下版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if gte IE 6]&gt; IE6以及IE6以上版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 7]&gt; 仅IE7可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if lt IE 7]&gt; IE7以及IE7以下版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if gte IE 7]&gt; IE7以及IE7以上版本可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 8]&gt; 仅IE8可识别 &lt;![endif]--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--[if IE 9]&gt; 仅IE9可识别 &lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p>使用 HTML 条件注释可以使得某些标签或者脚本只在指定的版本下加载。</p><p>其中：</p><ul><li>lte：就是Less than or equal to的简写，也就是小于或等于的意思。</li><li>lt ：就是Less than的简写，也就是小于的意思。</li><li>gte：就是Greater than or equal to的简写，也就是大于或等于的意思。</li><li>gt ：就是Greater than的简写，也就是大于的意思。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单介绍下 HTML 条件注释&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="HTML" scheme="http://jinsihou19.github.io/tags/HTML/"/>
+    
+      <category term="条件注释" scheme="http://jinsihou19.github.io/tags/%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何兼容到IE8</title>
+    <link href="http://jinsihou19.github.io/2017/12/21/webfront/%E5%A6%82%E4%BD%95%E5%81%9AIE%E4%BD%8E%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9/"/>
+    <id>http://jinsihou19.github.io/2017/12/21/webfront/如何做IE低版本兼容/</id>
+    <published>2017-12-21T02:05:59.000Z</published>
+    <updated>2017-12-23T10:41:12.127Z</updated>
+    
+    <content type="html"><![CDATA[<p>在开发前端项目中，最痛苦的就是进行IE低版本浏览器的兼容和适配。现在的项目没有特殊要求一般兼容到 IE8 就可以了。那我们在进行开发的时候，应该怎么去支持 IE 浏览器呢？由于 ES6 的特性各个浏览器支持的参差不齐，我们经常会使用 Babel 转 ES5 后，运行在浏览器上。今天要讨论的是项目兼容到 IE8 的问题。<br><a id="more"></a></p><h4 id="选择库和框架"><a href="#选择库和框架" class="headerlink" title="选择库和框架"></a>选择库和框架</h4><p>在前端开发的时候，选择库和框架的时候，一定要注意的就是文档中的浏览器支持情况。假如框架或者库只支持到 IE11，那么基于该框架的项目也只能是支持 IE11 或以上的浏览器。项目的 IE 兼容性是取项目中所有库的支持IE版本下限最高的那个。所以要使得项目兼容到 IE8，我们在挑选框架和库的时候，所有都要选择最低支持到 IE8 或以下。</p><h4 id="设置文档兼容模式"><a href="#设置文档兼容模式" class="headerlink" title="设置文档兼容模式"></a>设置文档兼容模式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br></pre></td></tr></table></figure><p>Edge 模式告诉 IE 以最高级模式渲染文档，也就是任何IE版本都以当前版本所支持的最高级标准模式渲染，避免版本升级造成的影响。简单的说，就是什么版本 IE 就用什么版本的标准模式渲染。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"chrome=1"</span>&gt;</span><br></pre></td></tr></table></figure><p>上面这个meta标签是强制 IE 使用 Chrome Frame 渲染。</p><p>最佳的兼容模式方案，结合考虑以上两种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>&gt;</span><br></pre></td></tr></table></figure><h4 id="支持-ES5-方法"><a href="#支持-ES5-方法" class="headerlink" title="支持 ES5 方法"></a>支持 ES5 方法</h4><p>在<code>&lt;head&gt;</code>标签中加上下面代码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="js/es5-shim.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="js/es5-sham.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="js/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p>HTML条件注释见 <a href="/2017/12/23/webfront/HTML条件注释/" title="HTML条件注释">HTML条件注释</a> 。</p><p><code>es5-shim.js</code> 完美模拟了所有 ES5 中可以被完美模拟的方法。文档见GitHub <a href="https://github.com/es-shims/es5-shim" target="_blank" rel="noopener">es5-shim</a>。</p><p><code>es5-sham.js</code> 尽量的模拟一些无法被完美模拟的方法，并保证代码不会崩溃，但不保证方法的功能全部正常运行。</p><p>这两个可以让一些只支持 ES3 的老旧浏览器运行 ES5 时不会出现大的问题。</p><h4 id="支持媒体查询"><a href="#支持媒体查询" class="headerlink" title="支持媒体查询"></a>支持媒体查询</h4> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p><code>Respond.js</code>让不支持<code>css3 Media Query</code>的浏览器包括 IE6-IE8 等其他浏览器支持查询。文档见GitHub <a href="https://github.com/scottjehl/Respond" target="_blank" rel="noopener">Respond</a>。</p><h4 id="支持-HTML5-标签"><a href="#支持-HTML5-标签" class="headerlink" title="支持 HTML5 标签"></a>支持 HTML5 标签</h4><p> 如果开发中使用到了 HTML5 标签，还需要加入以下代码：</p> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p> <code>html5shiv</code>使得传统浏览器支持部分 HTML5 元素并提供相应的基本样式。传统浏览器，即主流浏览器的低版本，包括IE6-9、Safari4.x和Firefox 3.x等。文档参见 GitHub <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="noopener">html5shiv</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在开发前端项目中，最痛苦的就是进行IE低版本浏览器的兼容和适配。现在的项目没有特殊要求一般兼容到 IE8 就可以了。那我们在进行开发的时候，应该怎么去支持 IE 浏览器呢？由于 ES6 的特性各个浏览器支持的参差不齐，我们经常会使用 Babel 转 ES5 后，运行在浏览器上。今天要讨论的是项目兼容到 IE8 的问题。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="IE低版本" scheme="http://jinsihou19.github.io/tags/IE%E4%BD%8E%E7%89%88%E6%9C%AC/"/>
+    
+      <category term="兼容性" scheme="http://jinsihou19.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="HTML条件注释" scheme="http://jinsihou19.github.io/tags/HTML%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Meta 标签中的 SEO 优化</title>
     <link href="http://jinsihou19.github.io/2017/12/17/webfront/Meta%E6%A0%87%E7%AD%BE%E4%B8%AD%E7%9A%84SEO%E4%BC%98%E5%8C%96/"/>
     <id>http://jinsihou19.github.io/2017/12/17/webfront/Meta标签中的SEO优化/</id>
     <published>2017-12-16T17:00:14.000Z</published>
-    <updated>2017-12-17T11:00:19.151Z</updated>
+    <updated>2017-12-23T10:30:02.417Z</updated>
     
     <content type="html"><![CDATA[<p>本文主要介绍<code>Meta</code>标签中和<code>SEO</code>优化有关的标签，<code>description</code>，<code>robots</code>，<code>keywords</code>和<code>title</code>，以及优化建议。<br><a id="more"></a></p><h4 id="Meta-Description"><a href="#Meta-Description" class="headerlink" title="Meta Description"></a>Meta Description</h4><p><code>Meta description</code>标签可能是最有用的标签之一。顾名思义，它会给搜索引擎提供关于这个网页的简短的描述。代码如下:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"页面简介"</span>/&gt;</span></span><br></pre></td></tr></table></figure><p>有这个标签之后，搜索引擎会在搜索结果页链接的下方显示出这个网页的简短的描述。推荐的<code>description</code>长度为160 个字符。</p><p>但是如果你没有使用<code>description</code>标签，搜索引擎仍会在搜索结果页链接的下方显示出自己创键的一小段文字或者干脆为空。没有简介或者不精确的简介，会让搜索结果略显单薄，也就意味着你将可能失去用户点击网页的机会。</p><h4 id="Meta-Robots"><a href="#Meta-Robots" class="headerlink" title="Meta Robots"></a>Meta Robots</h4><p><code>Meta robots</code>标签管理着搜索引擎是否可以进入网页，你可以用它来允许或不允许搜索引擎来获取你的网页、进入你网页中的子链接或对你的网页存档。例如：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"noindex,nofollow"</span>/&gt;</span></span><br></pre></td></tr></table></figure><p>这个 <code>meta</code> 标签告诉搜索引擎不要获取网页，并且阻止其进入链接。如果你不小心使用了两个矛盾的术语 (例如noindex 和index)，谷歌会选择最具限制性的选项。</p><p>为什么这个标签会对搜索引擎优化(SEO)起作用呢?首先，它可以防止对拷贝内容的冗余抓取，例如页面的打印版页面。它也可能会对那些内容不完整的页面或者而存在私密信息的网页起作用。</p><h4 id="Meta-Keywords"><a href="#Meta-Keywords" class="headerlink" title="Meta Keywords"></a>Meta Keywords</h4><p>在meta keywords标签里面，你可以存储几个关于网页内容的关键字。代码如下：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"关键字,keyword"</span>/&gt;</span></span><br></pre></td></tr></table></figure><p>不过现在主流的搜索引擎很少使用meta keywords来判断网页的内容了。设置这个标签的可能价值不太高。</p><h4 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h4><p>专业的讲，<code>title</code>标签不是<code>meta</code>标签，但他们都放在相同位置，它对搜索引擎优化很重要。</p><p>在所有的<code>HTML</code>文档中，<code>title</code>标签都是不可缺少的。它定义了整个文档的标题，如下所示：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Title of the page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure><p>标题通常会显示在两个不同的地方：浏览器的头部标签和搜索结果页。这就意味着<code>title</code>标签在点击率(CTR)和排名上有很重要的影响。</p><p>一个好的标题应该包含关键字，而且最好放在标题的开头部分。谷歌会限制标题为70个字符，所以需要书写一个合适的标题。</p><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>经过上面的介绍，一般的来说，Meta标签中的SEO优化加上<code>keywords</code>标签和<code>description</code>标签就可以了。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"页面简介"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"关键字,keyword"</span>/&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -31,7 +81,7 @@
     
     </summary>
     
-      <category term="web 前端" scheme="http://jinsihou19.github.io/categories/web-%E5%89%8D%E7%AB%AF/"/>
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="meta" scheme="http://jinsihou19.github.io/tags/meta/"/>
@@ -45,7 +95,7 @@
     <link href="http://jinsihou19.github.io/2017/12/15/webfront/PhantomJs%E8%B8%A9%E5%9D%91/"/>
     <id>http://jinsihou19.github.io/2017/12/15/webfront/PhantomJs踩坑/</id>
     <published>2017-12-15T15:49:30.000Z</published>
-    <updated>2017-12-17T11:02:29.534Z</updated>
+    <updated>2017-12-23T10:30:01.890Z</updated>
     
     <content type="html"><![CDATA[<p><code>PhantomJs</code>遇到的问题<br><a id="more"></a></p><h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><ul><li>phantomjs 环境下不能给 window.localStorage 赋值，会引起 phantomjs 占用内存、CPU 等资源占用飙涨。</li></ul>]]></content>
     
@@ -55,7 +105,7 @@
     
     </summary>
     
-      <category term="web 前端" scheme="http://jinsihou19.github.io/categories/web-%E5%89%8D%E7%AB%AF/"/>
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="PhantomJs" scheme="http://jinsihou19.github.io/tags/PhantomJs/"/>
@@ -69,7 +119,7 @@
     <link href="http://jinsihou19.github.io/2017/12/12/webfront/meta%E6%A0%87%E7%AD%BE%E6%8E%A7%E5%88%B6IE%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F/"/>
     <id>http://jinsihou19.github.io/2017/12/12/webfront/meta标签控制IE渲染模式/</id>
     <published>2017-12-12T14:52:22.000Z</published>
-    <updated>2017-12-17T11:00:55.751Z</updated>
+    <updated>2017-12-23T10:30:01.888Z</updated>
     
     <content type="html"><![CDATA[<p><code>meta</code>标签控制<code>IE</code>渲染标准模式和兼容模式<br><a id="more"></a></p><p>“X-UA-Compatible”的值有三种方式：</p><ol><li>Edge;</li><li>Emulate+IE版本号;</li><li>单纯版本号。</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-ua-compatible"</span> <span class="attr">content</span>=<span class="string">"IE=Edge"</span> &gt;</span></span><br></pre></td></tr></table></figure><p>Edge：始终以最新的文档模式来渲染页面。忽略文档类型声明。对于IE8，始终以IE8标准模式渲染页面。IE9亦如此。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-ua-compatible"</span> <span class="attr">content</span>=<span class="string">"IE=EmulateIE9"</span> &gt;</span></span><br></pre></td></tr></table></figure><ul><li>EmulateIE9：如果声明了文档类型，则以IE9标准模式渲染页面，否则将文档模式设置为IE5。</li><li>EmulateIE8：如果声明了文档类型，则以IE8标准模式渲染页面，否则将文档模式设置为IE5。 </li><li>EmulateIE7：如果声明了文档类型，则以IE7标准模式渲染页面，否则将文档模式设置为IE5。</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-ua-compatible"</span> <span class="attr">content</span>=<span class="string">"IE=9"</span> &gt;</span></span><br></pre></td></tr></table></figure><ul><li>9：强制以IE9标准模式渲染页面，忽略文档类型声明。</li><li>8：强制以IE8标准模式渲染页面，忽略文档类型声明。</li><li>7：强制以IE7标准模式渲染页面，忽略文档类型声明。</li><li>5：强制以IE5标准模式渲染页面，忽略文档类型声明。</li></ul>]]></content>
     
@@ -79,7 +129,7 @@
     
     </summary>
     
-      <category term="web 前端" scheme="http://jinsihou19.github.io/categories/web-%E5%89%8D%E7%AB%AF/"/>
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="前端" scheme="http://jinsihou19.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
@@ -175,7 +225,7 @@
     <link href="http://jinsihou19.github.io/2016/03/28/webfront/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86%E5%92%8Cjson%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
     <id>http://jinsihou19.github.io/2016/03/28/webfront/事件代理和json对象的操作/</id>
     <published>2016-03-27T16:33:38.000Z</published>
-    <updated>2017-12-12T15:09:24.816Z</updated>
+    <updated>2017-12-23T10:30:01.889Z</updated>
     
     <content type="html"><![CDATA[<p>任务十六 事件代理和json对象的操作<br><a id="more"></a></p><h3 id="json对象的操作"><a href="#json对象的操作" class="headerlink" title="json对象的操作"></a>json对象的操作</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">aqiData = &#123;</span><br><span class="line"><span class="string">"北京"</span>: <span class="number">90</span>,</span><br><span class="line"><span class="string">"上海"</span>: <span class="number">40</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><ol><li>添加</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aqiData[city] = value;</span><br></pre></td></tr></table></figure><ol><li>遍历</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> data <span class="keyword">in</span> aqiData) &#123;</span><br><span class="line"><span class="built_in">console</span>.info(consldata:aqiData[data]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>删除</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> aqiData[data];</span><br></pre></td></tr></table></figure><h3 id="事件代理机制"><a href="#事件代理机制" class="headerlink" title="事件代理机制"></a>事件代理机制</h3><p><em>事件代理机制</em></p><blockquote><p>当我们需要对很多元素添加事件的时候，可以通过将事件添加到它们的父节点而将事件委托给父节点来触发处理函数。这主要得益于浏览器的事件冒泡机制。</p></blockquote><p><em>浏览器的事件冒泡机制</em></p><blockquote><p>DOM2.0模型将事件处理流程分为三个阶段：一、事件捕获阶段，二、事件目标阶段，三、事件起泡阶段。如图：</p><p>事件捕获：当某个元素触发某个事件（如onclick），顶层对象document就会发出一个事件流，随着DOM树的节点向目标元素节点流去，直到到达事件真正发生的目标元素。在这个过程中，事件相应的监听函数是不会被触发的。</p><p>事件目标：当到达目标元素之后，执行目标元素该事件相应的处理函数。如果没有绑定监听函数，那就不执行。</p><p>事件起泡：从目标元素开始，往顶层元素传播。途中如果有节点绑定了相应的事件处理函数，这些函数都会被一次触发。如果想阻止事件起泡，可以使用e.stopPropagation()（Firefox）或者e.cancelBubble=true（IE）来组织事件的冒泡传播。</p></blockquote><p><img src="http://images.cnitblog.com/blog/477973/201302/18141423-8bd09a9c1e184df9a13b6e26b88348f3.jpg" alt=""></p><p><em>实例</em></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"aqi-table"</span> <span class="attr">border</span>=<span class="string">"1px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>城市<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>空气质量<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>操作<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>90<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">td</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>90<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure><p>当事件被抛到更上层的父节点的时候，我们通过检查事件的目标对象（target）来判断并获取事件源对象。我这里没有判断是否是这个对象。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//由上层（泛指）来捕获这个事件，然后回溯到事件触发者来进行处理</span></span><br><span class="line">table.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.target) &#123;<span class="comment">//这里的taget就是button</span></span><br><span class="line">    <span class="keyword">let</span> context = e.target.parentNode.parentNode.firstChild.innerText;</span><br><span class="line">    <span class="keyword">delete</span> aqiData[context];</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -185,7 +235,7 @@
     
     </summary>
     
-      <category term="web 前端" scheme="http://jinsihou19.github.io/categories/web-%E5%89%8D%E7%AB%AF/"/>
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="事件代理" scheme="http://jinsihou19.github.io/tags/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/"/>
@@ -201,7 +251,7 @@
     <link href="http://jinsihou19.github.io/2016/03/28/webfront/%E4%BD%BF%E7%94%A8bower%E6%90%AD%E5%BB%BAbootstrap%E5%B7%A5%E7%A8%8B/"/>
     <id>http://jinsihou19.github.io/2016/03/28/webfront/使用bower搭建bootstrap工程/</id>
     <published>2016-03-27T16:33:00.000Z</published>
-    <updated>2017-12-17T10:57:16.888Z</updated>
+    <updated>2017-12-23T10:30:01.890Z</updated>
     
     <content type="html"><![CDATA[<p>使用<code>bower</code>搭建<code>bootstrap</code>工程<br><a id="more"></a></p><p><strong>搭建工程</strong></p><ol><li><p>建立项目文件夹如下的目录结构(都是空文件夹)</p><p> <img src="/image/1.png" alt=""></p></li><li><p>安装bower包管理器,推荐阅读下面的安装教程:</p><blockquote><p><a href="https://segmentfault.com/a/1190000000349555" target="_blank" rel="noopener">https://segmentfault.com/a/1190000000349555</a></p></blockquote></li><li><p>安装好bower之后,切换到项目文件夹下,新建一个.bowerrc文件,在其中加入代码</p></li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"directory"</span> : <span class="string">"assets/lib"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>并保存;</p><ol><li>打开命令行切换到项目文件下</li></ol><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install bootstrap</span><br></pre></td></tr></table></figure><p>到项目下就发现在bower_components目录下安装好了bootstrap和jquery,因为bower会自动管理依赖,所以自动安装了jquery;</p><ol><li>依旧在项目文件夹下,在命令行运行:</li></ol><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower init</span><br></pre></td></tr></table></figure><p>这里有个参考</p><p><img src="/image/2.png" alt=""></p><p>然后按照提示选择选项,就可以了,完成这步,就完成项目的创建了,使用WebStorm打开就可以进行开发.</p><p><strong>clone工程的运行</strong></p><ol><li>(clone别人的工程的时候使用)当clone一份有bower.json的项目时,切换到项目文件夹下,在命令行运行:</li></ol><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install</span><br></pre></td></tr></table></figure><p>这时候,所有的依赖库都会安装完毕.</p><ol><li>使用WebStorm打开工程就可以进行开发了.</li></ol><p><strong>关于.gitignore要写什么</strong><br><strong>这里注意要将依赖库的文件夹和工程配置都加到忽略名单中,本工程的.gitignore参考内容如下:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.idea</span><br><span class="line">node_modules</span><br><span class="line">assets/lib</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -211,7 +261,7 @@
     
     </summary>
     
-      <category term="web 前端" scheme="http://jinsihou19.github.io/categories/web-%E5%89%8D%E7%AB%AF/"/>
+      <category term="web前端" scheme="http://jinsihou19.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="搭建工程" scheme="http://jinsihou19.github.io/tags/%E6%90%AD%E5%BB%BA%E5%B7%A5%E7%A8%8B/"/>
