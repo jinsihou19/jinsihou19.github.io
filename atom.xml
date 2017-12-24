@@ -73,7 +73,7 @@
     <link href="http://jinsihou19.github.io/2017/12/21/webfront/%E5%A6%82%E4%BD%95%E5%81%9AIE%E4%BD%8E%E7%89%88%E6%9C%AC%E5%85%BC%E5%AE%B9/"/>
     <id>http://jinsihou19.github.io/2017/12/21/webfront/如何做IE低版本兼容/</id>
     <published>2017-12-21T02:05:59.000Z</published>
-    <updated>2017-12-23T10:43:35.769Z</updated>
+    <updated>2017-12-24T07:48:01.959Z</updated>
     
     <content type="html"><![CDATA[<p>在开发前端项目中，最痛苦的就是进行IE低版本浏览器的兼容和适配。现在的项目没有特殊要求一般兼容到 IE8 就可以了。那我们在进行开发的时候，应该怎么去支持 IE 浏览器呢？由于 ES6 的特性各个浏览器支持的参差不齐，我们经常会使用 Babel 转 ES5 后，运行在浏览器上。今天要讨论的是项目兼容到 IE8 的问题。<br><a id="more"></a></p><h4 id="选择库和框架"><a href="#选择库和框架" class="headerlink" title="选择库和框架"></a>选择库和框架</h4><p>在前端开发的时候，选择库和框架的时候，一定要注意的就是文档中的浏览器支持情况。假如框架或者库只支持到 IE11，那么基于该框架的项目也只能是支持 IE11 或以上的浏览器。项目的 IE 兼容性是取项目中所有库的支持IE版本下限最高的那个。所以要使得项目兼容到 IE8，我们在挑选框架和库的时候，所有都要选择最低支持到 IE8 或以下。</p><h4 id="设置文档兼容模式"><a href="#设置文档兼容模式" class="headerlink" title="设置文档兼容模式"></a>设置文档兼容模式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge"</span>&gt;</span><br></pre></td></tr></table></figure><p>Edge 模式告诉 IE 以最高级模式渲染文档，也就是任何IE版本都以当前版本所支持的最高级标准模式渲染，避免版本升级造成的影响。简单的说，就是什么版本 IE 就用什么版本的标准模式渲染。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"chrome=1"</span>&gt;</span><br></pre></td></tr></table></figure><p>上面这个meta标签是强制 IE 使用 Chrome Frame 渲染。</p><p>最佳的兼容模式方案，结合考虑以上两种：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span>&gt;</span><br></pre></td></tr></table></figure><h4 id="支持-ES5-方法"><a href="#支持-ES5-方法" class="headerlink" title="支持 ES5 方法"></a>支持 ES5 方法</h4><p>在<code>&lt;head&gt;</code>标签中加上下面代码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="js/es5-shim.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="js/es5-sham.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;script type="text/javascript" src="js/respond.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p>HTML条件注释见 <a href="/2017/12/23/webfront/HTML条件注释/" title="HTML条件注释">HTML条件注释</a> 。</p><p><code>es5-shim.js</code> 完美模拟了所有 ES5 中可以被完美模拟的方法。文档见GitHub <a href="https://github.com/es-shims/es5-shim" target="_blank" rel="noopener">es5-shim</a>。</p><p><code>es5-sham.js</code> 尽量的模拟一些无法被完美模拟的方法，并保证代码不会崩溃，但不保证方法的功能全部正常运行。</p><p>这两个可以让一些只支持 ES3 的老旧浏览器运行 ES5 时不会出现大的问题。</p><h4 id="支持媒体查询"><a href="#支持媒体查询" class="headerlink" title="支持媒体查询"></a>支持媒体查询</h4> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p><code>Respond.js</code>让不支持<code>css3 Media Query</code>的浏览器包括 IE6-IE8 等其他浏览器支持查询。文档见GitHub <a href="https://github.com/scottjehl/Respond" target="_blank" rel="noopener">Respond</a>。</p><h4 id="支持-HTML5-标签"><a href="#支持-HTML5-标签" class="headerlink" title="支持 HTML5 标签"></a>支持 HTML5 标签</h4><p> 如果开发中使用到了 HTML5 标签，还需要加入以下代码：</p> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure><p> <code>html5shiv</code>使得传统浏览器支持部分 HTML5 元素并提供相应的基本样式。传统浏览器，即主流浏览器的低版本，包括IE6-9、Safari4.x和Firefox 3.x等。文档参见 GitHub <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="noopener">html5shiv</a>。</p><p> 目前想到的就这么多，欢迎评论补充。</p>]]></content>
     
@@ -190,9 +190,9 @@
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
     
-      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
-    
       <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
+    
+      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
@@ -216,9 +216,9 @@
     
       <category term="Nodejs" scheme="http://jinsihou19.github.io/tags/Nodejs/"/>
     
-      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
-    
       <category term="Electron" scheme="http://jinsihou19.github.io/tags/Electron/"/>
+    
+      <category term="原生应用" scheme="http://jinsihou19.github.io/tags/%E5%8E%9F%E7%94%9F%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
