@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title><![CDATA[基于Token的身份验证]]></title>
+      <url>/2017/12/24/web/%E5%9F%BA%E4%BA%8EToken%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/</url>
+      <content type="html"><![CDATA[<p>简单介绍 Cookie-Session，XSS，CSRF 相关基础，和基于 Token 的身份验证过程。<br><a id="more"></a></p>
+<p>HTTP 协议是一种无状态的协议。这意味着本次请求使用用户名密码通过验证之后，下次请求服务器还是不知道是谁发送的请求，还需要再次验证。</p>
+<h4 id="Cookie-Session-身份验证"><a href="#Cookie-Session-身份验证" class="headerlink" title="Cookie-Session 身份验证"></a>Cookie-Session 身份验证</h4><p>最常用的解决方法就是，当用户请求登录的时候，如果没有问题，我们在服务端生成一条记录，这个记录里可以说明一下登录的用户是谁，然后把这条记录的 ID 号发送给客户端，客户端收到以后把这个 ID 号存储在 Cookie 里，下次这个用户再向服务端发送请求的时候，可以带着这个 Cookie ，这样服务端会验证一个这个 Cookie 里的信息，看看能不能在服务端这里找到对应的记录，如果可以，说明用户已经通过了身份验证，就把用户请求的数据返回给客户端。</p>
+<p>上面说的就是 Cookie-Session 身份验证的过程。这解决了 HTTP 无状态的问题，但是也带来了一些其他问题，比如：XSS（Cross Site Scripting）跨站脚本攻击和 CSRF（Cross-site request forgery）跨站请求伪造。</p>
+<h5 id="XSS（Cross-Site-Scripting）跨站脚本攻击"><a href="#XSS（Cross-Site-Scripting）跨站脚本攻击" class="headerlink" title="XSS（Cross Site Scripting）跨站脚本攻击"></a>XSS（Cross Site Scripting）跨站脚本攻击</h5><p>XSS 攻击是指网页中漏洞，通过巧妙的方法被注入恶意代码，当用户加载页面的时候自动执行恶意代码的程序。攻击成功后，攻击者可能得到更高的权限（如执行一些操作）、私密网页内容、会话和 cookie等各种内容。</p>
+<p>假如页面中出现了 XSS 漏洞，由于 Cookie 是可以被 JS 获取的，攻击者可以获取到用户的 cookie 从而能够操作用户的账户等。在设置 cookie 的时候，设置httpOnly 选项使得 JS 不能读取到 cookie，那么 XSS 注入的问题也基本不用担心了。这时候还存在有另外一种攻击手段。</p>
+<h5 id="CSRF（Cross-site-request-forgery）跨站请求伪造"><a href="#CSRF（Cross-site-request-forgery）跨站请求伪造" class="headerlink" title="CSRF（Cross-site request forgery）跨站请求伪造"></a>CSRF（Cross-site request forgery）跨站请求伪造</h5><p>浏览器在访问同一个网站时会自动携带上 cookie。如果此时已经通过了验证，攻击者可以在自己的页面内访问目标网站并执行一些操作。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去执行。可以说 CSRF 是利用网站对用户网页浏览器的信任进行攻击的。</p>
+<p>CSRF 有两种防御措施：一个是检查Referer字段，另一个是添加校验token。Referer字段简单有效，但是也有些缺陷，一是无法保证所有浏览器都有具体实现，甚至有些用户由于隐私问题手动关闭Referer字段，另外也无法保证Referer字段是否有其他漏洞。添加校验token是比较有效的防御 CSRF 攻击的措施。由于浏览器在访问同一个网站时会自动携带上 cookie，所以只要身份验证信息不保存在 cookie 中，并且攻击者无法伪造验证信息，那么攻击者就无法再执行 CSRF 攻击。</p>
+<h4 id="Token-身份验证"><a href="#Token-身份验证" class="headerlink" title="Token 身份验证"></a>Token 身份验证</h4><p>先看认证的<br>流程图：</p>
+<p><img src="token1.png" alt="基于token的身份验证流程"></p>
+<p>token 身份验证的过程：</p>
+<ol>
+<li>用户发送用户名密码进行登录；</li>
+<li>登录之后生成一个 token，随响应返回。这里有两种方式返回 token，一种是放入 cookie 中，前端从 cookie 中取出加到请求头中，但是一旦设置httponly，前端就无法获取到后台设置的 cookie 了，这种方法不适合。所以 token 就改为随响应返回。</li>
+<li>前端将其存在 localstorage 或者中 cookie。一是保存在 localstorage 有弊端，有些上古浏览器，比如ie 567，并不支持 localstorage，需要一个 polyfill 来兼容所有浏览器。二是保存在cookie中，这里只是将cookie作为一种储存来使用，不会受到后端设置 httponly 的影响，另外这里token保存在cookie中，由于需要手动放入请求头，不会影响验证。</li>
+<li>发送请求时，由 JS 操作取出保存的 token，并在请求头上加上 Authorization：token，发送请求；</li>
+<li>后台拦截请求（主要是post，put，detele等请求）进行 token 校验，通过执行逻辑返回数据，不通过重定向到登录界面或者返回认证失败；</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> 网络安全 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> token </tag>
+            
+            <tag> 身份验证 </tag>
+            
+            <tag> XSS </tag>
+            
+            <tag> CSRF </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[HTML条件注释]]></title>
       <url>/2017/12/23/webfront/HTML%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/</url>
       <content type="html"><![CDATA[<p>简单介绍下 HTML 条件注释<br><a id="more"></a></p>
@@ -56,6 +100,7 @@
 <h4 id="支持-HTML5-标签"><a href="#支持-HTML5-标签" class="headerlink" title="支持 HTML5 标签"></a>支持 HTML5 标签</h4><p> 如果开发中使用到了 HTML5 标签，还需要加入以下代码：</p>
  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 <p> <code>html5shiv</code>使得传统浏览器支持部分 HTML5 元素并提供相应的基本样式。传统浏览器，即主流浏览器的低版本，包括IE6-9、Safari4.x和Firefox 3.x等。文档参见 GitHub <a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="noopener">html5shiv</a>。</p>
+<p> 目前想到的就这么多，欢迎评论补充。</p>
 ]]></content>
       
         <categories>
